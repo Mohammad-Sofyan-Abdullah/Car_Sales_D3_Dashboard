@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Used Car Sales Dashboard</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Header -->
+        <header class="dashboard-header">
+            <h1>🚗 Used Car Sales Analytics Dashboard</h1>
+            <p>Comprehensive insights into car sales performance and trends</p>
+        </header>
+
+        <!-- Filters Section -->
+        <div class="filters-section">
+            <div class="filter-group">
+                <label for="manufacturerFilter">Manufacturer:</label>
+                <select id="manufacturerFilter">
+                    <option value="">All Manufacturers</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="statusFilter">Sale Status:</label>
+                <select id="statusFilter">
+                    <option value="">All Status</option>
+                    <option value="Sold">Sold</option>
+                    <option value="Un Sold">Un Sold</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="typeFilter">Car Type:</label>
+                <select id="typeFilter">
+                    <option value="">All Types</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="yearFilter">Year Range:</label>
+                <input type="range" id="yearFilter" min="2015" max="2024" value="2015">
+                <span id="yearValue">2015+</span>
+            </div>
+        </div>
+
+        <!-- KPIs Section -->
+        <div class="kpis-section">
+            <div class="kpi-card">
+                <div class="kpi-icon">📊</div>
+                <div class="kpi-content">
+                    <h3 id="totalCars">0</h3>
+                    <p>Total Cars</p>
+                </div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-icon">💰</div>
+                <div class="kpi-content">
+                    <h3 id="totalRevenue">$0</h3>
+                    <p>Total Revenue</p>
+                </div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-icon">✅</div>
+                <div class="kpi-content">
+                    <h3 id="soldCars">0</h3>
+                    <p>Cars Sold</p>
+                </div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-icon">📈</div>
+                <div class="kpi-content">
+                    <h3 id="avgMargin">0%</h3>
+                    <p>Avg Margin</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Charts Section -->
+        <div class="charts-section">
+            <!-- Sales by Manufacturer -->
+            <div class="chart-container">
+                <h3>Sales by Manufacturer</h3>
+                <div id="manufacturerChart"></div>
+            </div>
+
+            <!-- Price Distribution -->
+            <div class="chart-container">
+                <h3>Price Distribution</h3>
+                <div id="priceHistogram"></div>
+            </div>
+
+            <!-- Sales Timeline -->
+            <div class="chart-container full-width">
+                <h3>Sales Timeline</h3>
+                <div id="timelineChart"></div>
+            </div>
+
+            <!-- Car Type Distribution -->
+            <div class="chart-container">
+                <h3>Car Type Distribution</h3>
+                <div id="carTypeChart"></div>
+            </div>
+
+            <!-- Sales Performance -->
+            <div class="chart-container">
+                <h3>Sales Agent Performance</h3>
+                <div id="agentChart"></div>
+            </div>
+
+            <!-- Margin Analysis -->
+            <div class="chart-container full-width">
+                <h3>Margin Analysis by Car Type</h3>
+                <div id="marginChart"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/manufacturerChart.js"></script>
+    <script src="js/priceHistogram.js"></script>
+    <script src="js/timelineChart.js"></script>
+    <script src="js/carTypeChart.js"></script>
+    <script src="js/agentChart.js"></script>
+    <script src="js/marginChart.js"></script>
+</body>
+</html>
